@@ -10,11 +10,17 @@ namespace LV1
         private String author;
         private int importance;
         
-        public string getText() { return this.text; }
-        public string getAuthor() { return this.author; }
-        public int getImportance() { return this.importance; }
-        public void setText(string text) { this.text = text; }
-        public void setImportance(int importance) { this.importance = importance; }
+        public string Text {
+            get { return this.text; }
+            set { this.text = value; }
+        }
+        public string Author{
+            get { return this.author; }
+        }
+        public int Importance{
+            get { return this.importance; }
+            set { this.importance = value; }
+        }
 
         public Record() { }            
         public Record (string author){

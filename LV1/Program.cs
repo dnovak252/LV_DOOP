@@ -10,10 +10,12 @@ namespace LV1
             Record record1= new Record("Text1", "Marko", 2);
             Record record2 = new Record("Text2", 4);
             Record record3 = new Record(3,"Ivo");
+            Record record4 = new Record("Branko");
 
-            Console.WriteLine(record1.getText() + ", " + record1.getAuthor() + ", " + record1.getImportance());
-            Console.WriteLine(record2.getText() + ", " + record2.getImportance());
-            Console.WriteLine(record3.getImportance() + ", " + record3.getAuthor());
+            Console.WriteLine(record1.Text + ", " + record1.Author + ", " + record1.Importance);
+            Console.WriteLine(record2.Text + ", " + record2.Importance);
+            Console.WriteLine(record3.Importance + ", " + record3.Author);
+            Console.WriteLine(record4.Author);
         }
     }
 }
