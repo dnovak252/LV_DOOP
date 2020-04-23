@@ -16,6 +16,7 @@ namespace LV1
         }
         public string Author{
             get { return this.author; }
+            private set { this.author = value; }
         }
         public int Importance{
             get { return this.importance; }
@@ -39,5 +40,8 @@ namespace LV1
             this.importance = importance;
             this.author = author;
         }
+
+        public override string ToString() { 
+           return this.text + ", " + this.author + ", " + this.importance; }
     }
 }
