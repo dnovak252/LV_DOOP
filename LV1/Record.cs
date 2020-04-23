@@ -10,10 +10,10 @@ namespace LV1
         private String author;
         private int importance;
 
-        private String getText() { return this.text; }
-        private String getAuthor() { return this.author; }
-        private int getImportance() { return this.importance; }
-        private void setText(String text) { this.text = text; }
-        private void setImportance(int importance) { this.importance = importance; }
+        public String getText() { return this.text; }
+        public String getAuthor() { return this.author; }
+        public int getImportance() { return this.importance; }
+        public void setText(String text) { this.text = text; }
+        public void setImportance(int importance) { this.importance = importance; }
     }
 }
