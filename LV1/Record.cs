@@ -19,7 +19,7 @@ namespace LV1
         }
         public string Author{
             get { return this.author; }
-            private set { this.author = value; }
+            private set { this.author = string.Empty; }
         }
         public int Importance{
             get { return this.importance; }

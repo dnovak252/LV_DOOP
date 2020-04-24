@@ -24,7 +24,7 @@ namespace LV1
                 string text = Console.ReadLine();
                 Console.WriteLine("Input author: ");
                 string author = Console.ReadLine();
-                Console.WriteLine("Input importance:");
+                Console.WriteLine("Input importance (Must be between 0 and 4):");
                 int importance = Convert.ToInt32(Console.ReadLine());
 
                 listrecord.addRecord(new Record_DateTime(text, author, importance));
