@@ -18,7 +18,7 @@ namespace LV1
         }
         public override string ToString()
         {
-            return base.ToString()+"\n\nCreation time: "+this.time;
+            return base.ToString()+"\n\n\nCreation time: "+this.time;
         }
     }
 }

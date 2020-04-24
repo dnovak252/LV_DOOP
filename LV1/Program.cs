@@ -14,8 +14,6 @@ namespace LV1
             Console.WriteLine(record1.ToString());
             Console.WriteLine(record2.ToString());
             record3.Text = "Text3";
-            Console.WriteLine(record3.ToString());
-            record3.Text = "Text4";
             record3.Importance = 4;
             Console.WriteLine(record3.ToString());
 
@@ -36,7 +34,7 @@ namespace LV1
             {
                 Console.WriteLine(record.ToString());
             }
-            Console.WriteLine("______________________________________________________________________________________");
+            Console.WriteLine("__________________________________________________________________________________________");
             for (int i = 0; i < 3; i++)
             {
                 if (listrecord.takeRecord(i).Importance == 4)
