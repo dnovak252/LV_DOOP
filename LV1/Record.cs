@@ -4,6 +4,9 @@ using System.Text;
 
 namespace LV1
 {
+    public enum Importance{
+        lowest, low, medium, high, highest
+    }
     class Record
     {
         private String text;
@@ -24,23 +27,18 @@ namespace LV1
         }
 
         public Record() { }            
-        public Record (string author){
+        public Record (string author)
+        {
             this.author = author;
         }
-        public Record(string text, string author, int importance){
+        public Record(string text, string author, int importance)
+        {
             this.text = text;
             this.author = author;
             this.importance = importance;
         }
-        public Record(string text, int importance){
-            this.text = text;
-            this.importance = importance;
-        }
-        public Record(int importance, string author){
-            this.importance = importance;
-            this.author = author;
-        }
-
+       
+       
         public override string ToString() { 
            return this.text + ", " + this.author + ", " + this.importance; }
     }
