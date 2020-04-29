@@ -4,17 +4,19 @@ using System.Text;
 
 namespace LV2
 {
-    class DiceRoller
+    class DiceRoller : ILogable
     {
         private List<Die> dice;
         private List<int> resultForEachRoll;
-        private ILogger logger;
+        //Zadatak 4
+        //private ILogger logger;
 
-        public DiceRoller(ILogger logger)
+        public DiceRoller()
         {
             this.dice = new List<Die>();
             this.resultForEachRoll = new List<int>();
-            this.logger = logger;
+            //Zadatak 4
+            //this.logger = logger;
         }
         public void InsertDie(Die die)
         {
@@ -42,13 +44,24 @@ namespace LV2
         //    foreach (int number in resultForEachRoll)
         //        Console.WriteLine("Number rolled: " + number);
         //}
-        public void LogRollingResults()
+        //Zadatak 4
+        //public void LogRollingResults()
+        //{
+        //    foreach(int result in this.resultForEachRoll)
+        //    {
+        //        Console.Write("Number rolled: ");
+        //        logger.Log(result.ToString());
+        //    }
+        //}
+
+        public string GetStringRepresentation()
         {
-            foreach(int result in this.resultForEachRoll)
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (int result in this.resultForEachRoll)
             {
-                Console.Write("Number rolled: ");
-                logger.Log(result.ToString());
+                stringBuilder.AppendFormat("\nNumber rolled: {0} ", result);
             }
+            return stringBuilder.ToString();
         }
     }
 }

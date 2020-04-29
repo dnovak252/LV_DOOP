@@ -8,16 +8,20 @@ namespace LV2
         {
             ConsoleLogger consoleLogger = new ConsoleLogger();
             FileLogger fileLogger = new FileLogger(@"D:/LV_DOOP/LV/LV2/proba.txt");
-            DiceRoller diceRoller = new DiceRoller(consoleLogger);
+            DiceRoller diceRoller = new DiceRoller();
             int numberOfObjects = 20;
             for (int i=0;i<numberOfObjects; i++)
             {
                 diceRoller.InsertDie(new Die(6));
             }
             diceRoller.RollAllDice();
-            //Zadatak3
+            //Zadatak 3
             //diceRoller.rollingPrint(diceRoller.GetRollingResults());
-            diceRoller.LogRollingResults();
+
+            //Zadatak 4
+            //diceRoller.LogRollingResults();
+            consoleLogger.Log(diceRoller);
+            fileLogger.Log(diceRoller);
         }
     }
 }

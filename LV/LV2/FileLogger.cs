@@ -12,11 +12,11 @@ namespace LV2
         {
             this.filePath = filePath;
         }
-        public void Log(string message)
+        public void Log(ILogable data)
         {
                using (StreamWriter writer=new StreamWriter(this.filePath))
                 {
-                  writer.WriteLine(message);
+                  writer.WriteLine(data.GetStringRepresentation());
                 }
         }
     }

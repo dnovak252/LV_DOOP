@@ -1,1 +1,21 @@
-4
+
+Number rolled: 5 
+Number rolled: 6 
+Number rolled: 1 
+Number rolled: 6 
+Number rolled: 5 
+Number rolled: 3 
+Number rolled: 2 
+Number rolled: 1 
+Number rolled: 4 
+Number rolled: 6 
+Number rolled: 3 
+Number rolled: 5 
+Number rolled: 2 
+Number rolled: 4 
+Number rolled: 6 
+Number rolled: 1 
+Number rolled: 2 
+Number rolled: 1 
+Number rolled: 1 
+Number rolled: 1 
