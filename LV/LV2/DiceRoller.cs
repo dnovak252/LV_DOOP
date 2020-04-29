@@ -10,11 +10,11 @@ namespace LV2
         private List<int> resultForEachRoll;
         private ILogger logger;
 
-        public DiceRoller()
+        public DiceRoller(ILogger logger)
         {
             this.dice = new List<Die>();
             this.resultForEachRoll = new List<int>();
-            this.logger = new ConsoleLogger("File");
+            this.logger = logger;
         }
         public void InsertDie(Die die)
         {
@@ -36,15 +36,17 @@ namespace LV2
         {
             get { return dice.Count; }
         }
-        public void rollingPrint(IList<int> resultForEachRoll)
-        {
-            foreach(int number in resultForEachRoll)
-            Console.WriteLine("Number rolled: " + number);
-        }
+        //Zadatak3
+        //public void rollingPrint(IList<int> resultForEachRoll)
+        //{
+        //    foreach (int number in resultForEachRoll)
+        //        Console.WriteLine("Number rolled: " + number);
+        //}
         public void LogRollingResults()
         {
             foreach(int result in this.resultForEachRoll)
             {
+                Console.Write("Number rolled: ");
                 logger.Log(result.ToString());
             }
         }

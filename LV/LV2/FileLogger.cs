@@ -7,18 +7,15 @@ namespace LV2
 {
     class FileLogger : ILogger
     {
-        private string type;
-        private string filePath= @"D:/LV_DOOP/LV/LV2/proba.txt";
+        private string filePath;
 
-        public FileLogger(string type, string filePath)
+        public FileLogger(string filePath)
         {
-            this.type = type;
             this.filePath = filePath;
         }
         public void Log(string message)
         {
-            if(this.type.Equals("File"))
-                using (StreamWriter writer=new StreamWriter(this.filePath))
+               using (StreamWriter writer=new StreamWriter(this.filePath))
                 {
                   writer.WriteLine(message);
                 }
