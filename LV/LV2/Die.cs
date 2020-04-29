@@ -9,7 +9,7 @@ namespace LV2
         private int numberOfSides;
         private RandomGenerator randomGenerator;
 
-        public int NumberOfSides()
+        public int NumberOfSides
         {
            get { return this.numberOfSides; }
         }
