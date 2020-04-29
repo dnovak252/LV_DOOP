@@ -9,10 +9,10 @@ namespace LV2
         private int numberOfSides;
         private Random randomGenerator;
 
-        public Die(int numberOfSides)
+        public Die(int numberOfSides, Random randomNumbers)
         {
             this.numberOfSides = numberOfSides;
-            this.randomGenerator = new Random();
+            this.randomGenerator = randomNumbers;
         }
         public int Roll()
         {
