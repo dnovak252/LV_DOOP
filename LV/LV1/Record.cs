@@ -4,7 +4,8 @@ using System.Text;
 
 namespace LV1
 {
-    public enum Importance{
+    public enum Importance
+    {
         lowest, low, medium, high, highest
     }
     class Record
@@ -12,22 +13,25 @@ namespace LV1
         private String text;
         private String author;
         private int importance;
-        
-        public string Text {
+
+        public string Text
+        {
             get { return this.text; }
             set { this.text = value; }
         }
-        public string Author{
+        public string Author
+        {
             get { return this.author; }
             private set { this.author = string.Empty; }
         }
-        public int Importance{
+        public int Importance
+        {
             get { return this.importance; }
             set { this.importance = value; }
         }
 
-        public Record() { }            
-        public Record (string author)
+        public Record() { }
+        public Record(string author)
         {
             this.author = author;
         }
@@ -37,9 +41,11 @@ namespace LV1
             this.author = author;
             this.importance = importance;
         }
-       
-       
-        public override string ToString() { 
-           return this.text + ", " + this.author + ", " + this.importance; }
+
+
+        public override string ToString()
+        {
+            return this.text + ", " + this.author + ", " + this.importance;
+        }
     }
 }

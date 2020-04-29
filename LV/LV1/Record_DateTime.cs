@@ -9,7 +9,7 @@ namespace LV1
         public DateTime Time
         {
             get { return this.time; }
-            set { this.time = value;}
+            set { this.time = value; }
         }
         private DateTime time;
         public Record_DateTime(string text, string author, int importance) : base(text, author, importance)
@@ -18,7 +18,7 @@ namespace LV1
         }
         public override string ToString()
         {
-            return base.ToString()+"\n\n\nCreation time: "+this.time;
+            return base.ToString() + "\n\n\nCreation time: " + this.time;
         }
     }
 }
