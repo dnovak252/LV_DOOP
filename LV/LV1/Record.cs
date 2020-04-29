@@ -45,7 +45,7 @@ namespace LV1
 
         public override string ToString()
         {
-            return this.text + ", " + this.author + ", " + this.importance;
+            return "Ispis: " + this.text + ", " + this.author + ", " + this.importance;
         }
     }
 }

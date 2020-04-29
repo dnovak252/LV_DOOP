@@ -10,5 +10,6 @@ namespace LV1
         public void deleteRecord(Record deletingRecord);
         public Record takeRecord(int takingRecord);
         public List<Record> takeRecordList();
+
     }
 }

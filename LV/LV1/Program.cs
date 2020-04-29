@@ -7,7 +7,7 @@ namespace LV1
     {
         static void Main(string[] args)
         {
-            Record record1 = new Record("Text1", "Marko", 2);
+            Record record1 = new Record("Text1", "Stanko", 2);
             Record record2 = new Record("Text2", string.Empty, 4);
             Record record3 = new Record("Branko");
 
