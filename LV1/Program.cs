@@ -40,6 +40,7 @@ namespace LV1
                 if (listrecord.takeRecord(i).Importance == 4)
                 {
                     listrecord.removeRecord(i);
+                    i--;
                 }
             }
             foreach (Record record in listrecord.takeRecordList())
