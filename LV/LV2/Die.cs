@@ -7,16 +7,16 @@ namespace LV2
     class Die
     {
         private int numberOfSides;
-        private Random randomGenerator;
+        private RandomGenerator randomGenerator;
 
-        public Die(int numberOfSides, Random randomNumbers)
+        public Die(int numberOfSides)
         {
             this.numberOfSides = numberOfSides;
-            this.randomGenerator = randomNumbers;
+            this.randomGenerator = RandomGenerator.GetInstance();
         }
         public int Roll()
         {
-            int rolledNumber = randomGenerator.Next(1, numberOfSides + 1);
+            int rolledNumber = randomGenerator.NextInt(1, numberOfSides + 1);
             return rolledNumber;
         }
     }
