@@ -8,7 +8,6 @@ namespace LV2
     class FileLogger : ILogger
     {
         private string filePath;
-
         public FileLogger(string filePath)
         {
             this.filePath = filePath;

@@ -36,7 +36,7 @@ namespace LV2
         {
             get { return dice.Count; }
         }
-        //Zadatak3
+        //Zadatak 3
         //public void rollingPrint(IList<int> resultForEachRoll)
         //{
         //    foreach (int number in resultForEachRoll)

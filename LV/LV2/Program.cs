@@ -15,6 +15,7 @@ namespace LV2
                 diceRoller.InsertDie(new Die(6));
             }
             diceRoller.RollAllDice();
+            //Zadatak3
             //diceRoller.rollingPrint(diceRoller.GetRollingResults());
             diceRoller.LogRollingResults();
         }

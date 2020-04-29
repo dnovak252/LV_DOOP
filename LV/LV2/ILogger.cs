@@ -8,4 +8,5 @@ namespace LV2
     {
         void Log(string message);
     }
+
 }
