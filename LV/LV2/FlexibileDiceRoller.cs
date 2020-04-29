@@ -31,5 +31,15 @@ namespace LV2
                 this.resultForEachRoll.Add(die.Roll()); 
             } 
         }
+        public void removeSpecificSideDice(int numberOfSides)
+        {
+            for (int i=0; i < dice.Count; i++)
+            {
+                if (dice[i].NumberOfSides == numberOfSides)
+                {
+                    dice.RemoveAt(i);
+                }
+            }
+        }
     }
 }
