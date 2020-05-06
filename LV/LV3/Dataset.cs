@@ -62,6 +62,19 @@ namespace LV3
             deepCopyDataset.data = result;
             return deepCopyDataset;
         }
-        
+        public string PrintDataList()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (List<string> items in this.data)
+            {
+                foreach (var item in items)
+                {
+                    stringBuilder.Append(item).Append(" ");
+                }
+
+            }
+            return stringBuilder.ToString();
+        }
+
     }
 }
