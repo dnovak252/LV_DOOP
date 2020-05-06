@@ -29,5 +29,7 @@ namespace LV3
         {
             return (Prototype)this.MemberwiseClone();
         }
+        
+        //Mislim da ima razlike jer je deep clone pohranjen u novom objektu i nije ovisan o pocetnom objektu
     }
 }
