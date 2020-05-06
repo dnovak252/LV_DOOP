@@ -28,7 +28,6 @@ namespace LV3
             ConsoleNotification consoleNotification = new ConsoleNotification("Miha", "Test", "Ovo je test", DateTime.Now, Category.INFO, ConsoleColor.Red);
             NotificationManager notificationManager = new NotificationManager();
             notificationManager.Display(consoleNotification);
-
         }
     }
 }
