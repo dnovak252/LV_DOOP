@@ -27,14 +27,29 @@ namespace LV4
             //}
 
             //3. zadatak
-            List<IRentable> rentableList = new List<IRentable>();
-            Book book1 = new Book("Don Quijote");
-            Video video1 = new Video("Dirty Grandpa");
-            rentableList.Add(book1);
-            rentableList.Add(video1);
-            RentingConsolePrinter printer = new RentingConsolePrinter();
-            printer.DisplayItems(rentableList);
-            printer.PrintTotalPrice(rentableList);
+            //List<IRentable> rentableList = new List<IRentable>();
+            //Book book1 = new Book("Don Quijote");
+            //Video video1 = new Video("Dirty Grandpa");
+            //rentableList.Add(book1);
+            //rentableList.Add(video1);
+            //RentingConsolePrinter printer = new RentingConsolePrinter();
+            //printer.DisplayItems(rentableList);
+            //printer.PrintTotalPrice(rentableList);
+
+            //4. zadatak
+            //List<IRentable> rentableList = new List<IRentable>();
+            //Book book1 = new Book("Fifty Shades Of Grey");
+            //Video video1 = new Video("Day After Tomorrow");
+            //HotItem hotItem = new HotItem(book1);
+            //HotItem hotItem2 = new HotItem(video1);
+            //rentableList.Add(hotItem);
+            //rentableList.Add(hotItem2);
+            //RentingConsolePrinter printer = new RentingConsolePrinter();
+            //printer.DisplayItems(rentableList);
+            //printer.PrintTotalPrice(rentableList);
+
+
+
         }
     }
 }
