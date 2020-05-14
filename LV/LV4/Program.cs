@@ -48,8 +48,16 @@ namespace LV4
             //printer.DisplayItems(rentableList);
             //printer.PrintTotalPrice(rentableList);
 
+            //Razlika je u tome što vidimo povećanje cijene te vidimo drugačiji način ispisa
 
-
+            //5. zadatak
+            List<IRentable> sale = new List<IRentable>();
+            Book book1 = new Book("Fifty Shades Of Grey");
+            DiscountedItem item = new DiscountedItem(book1);
+            sale.Add(item);
+            RentingConsolePrinter printer = new RentingConsolePrinter();
+            printer.PrintTotalPrice(sale);
+            printer.DisplayItems(sale);
         }
     }
 }
