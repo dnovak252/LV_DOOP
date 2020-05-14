@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LV4
 {
@@ -51,13 +54,40 @@ namespace LV4
             //Razlika je u tome što vidimo povećanje cijene te vidimo drugačiji način ispisa
 
             //5. zadatak
-            List<IRentable> sale = new List<IRentable>();
-            Book book1 = new Book("Fifty Shades Of Grey");
-            DiscountedItem item = new DiscountedItem(book1);
-            sale.Add(item);
-            RentingConsolePrinter printer = new RentingConsolePrinter();
-            printer.PrintTotalPrice(sale);
-            printer.DisplayItems(sale);
+            //List<IRentable> sale = new List<IRentable>();
+            //Book book1 = new Book("Fifty Shades Of Grey");
+            //DiscountedItem item = new DiscountedItem(book1);
+            //sale.Add(item);
+            //RentingConsolePrinter printer = new RentingConsolePrinter();
+            //printer.PrintTotalPrice(sale);
+            //printer.DisplayItems(sale);
+
+            //6. zadatak
+            //string emailTest = "test.email@gmail.com";
+            //string emailTest2 = "test.emailgmail.com";
+            //EmailValidator emailValidator = new EmailValidator();
+            //emailValidator.IsValidAddress(emailTest);
+            //emailValidator.IsValidAddress(emailTest2);
+            //Console.WriteLine("Mail is correct: " + emailValidator.IsValidAddress(emailTest));
+            //Console.WriteLine("Mail is correct: " + emailValidator.IsValidAddress(emailTest2));
+
+            //7. zadatak
+            RegistrationValidator registrationValidator = new RegistrationValidator();
+            while (true)
+            {
+                while (true)
+                {
+                    if (registrationValidator.IsUserEntryValid(UserEntry.ReadUserFromConsole()))
+                    {
+                        Console.WriteLine("Your registration is completed succesfully.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You entered e-mail or password wrong! Try again.");
+                    }
+                }
+
+            }
         }
     }
 }
