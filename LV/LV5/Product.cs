@@ -21,6 +21,5 @@ namespace LV5
         public string Description(int depth = 0)
         {
             return new string(' ', depth) + this.description;}
-}
     }
 }
