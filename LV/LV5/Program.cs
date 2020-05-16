@@ -34,6 +34,13 @@ namespace LV5
             //groupNote2.AddinGroup("Remzo");
             //groupNote2.Show();
 
+            //7. zadatak
+            //double[] array = { 1, 2, 4, 5, 6, 7 , 8, 9, 8, 7 , 6, 5, 4, 3, 2, 1 };
+            //NumberSequence numberSequence = new NumberSequence(array);
+            //LinearSearch linearSearch = new LinearSearch();
+            //numberSequence.SetSearchStrategy(linearSearch);
+            //numberSequence.Search(5);
+            //numberSequence.Search(12);
         }
     }
 }

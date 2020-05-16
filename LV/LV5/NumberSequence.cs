@@ -6,8 +6,10 @@ namespace LV5
 {
     class NumberSequence
     {
-        private double[] sequence; private int sequenceSize;
+        private double[] sequence; 
+        private int sequenceSize;
         private SortStrategy sortStrategy;
+        private ISearchStrategy searchStrategy;
         public NumberSequence(int sequenceSize)
         {
             this.sequenceSize = sequenceSize;
@@ -35,6 +37,10 @@ namespace LV5
             }
             return builder.ToString();
         }
-
+        public void SetSearchStrategy(ISearchStrategy strategy)
+        {
+            this.searchStrategy = strategy;
+        }
+        public void Search(double searchNumber) { this.searchStrategy.Search(this.sequence, searchNumber); }
     }
 }
