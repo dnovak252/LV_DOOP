@@ -99,17 +99,30 @@ namespace LV6
             //Console.WriteLine(validator.CheckPassword(passwordCheck2));
 
             //8. zadatak
+            //WeatherStation weatherStation = new WeatherStation(20);
+            //HomeThermostat homeThermostat = new HomeThermostat();
+            //HomeThermostat workplaceThermostat = new HomeThermostat();
+            //homeThermostat.Update(20);
+            //weatherStation.AddObserver(homeThermostat);
+            //weatherStation.AddObserver(workplaceThermostat);
+            //workplaceThermostat.Update(14);
+            //weatherStation.SetTemperature(27);
+            //weatherStation.RemoveObserver(homeThermostat);
+            //workplaceThermostat.Update(14);
+            //workplaceThermostat.Update(32);
+
+            //9. zadatak
+            WeatherObserver car = new CarDetails(140, 50, "summer");
             WeatherStation weatherStation = new WeatherStation(20);
-            HomeThermostat homeThermostat = new HomeThermostat();
-            HomeThermostat workplaceThermostat = new HomeThermostat();
-            homeThermostat.Update(20);
-            weatherStation.AddObserver(homeThermostat);
-            weatherStation.AddObserver(workplaceThermostat);
-            workplaceThermostat.Update(14);
-            weatherStation.SetTemperature(27);
-            weatherStation.RemoveObserver(homeThermostat);
-            workplaceThermostat.Update(14);
-            workplaceThermostat.Update(32);
+            weatherStation.SetTemperature(21);
+            weatherStation.AddObserver(car);
+            Console.WriteLine(car.ToString());
+            weatherStation.SetTemperature(2);
+            Console.WriteLine(car.ToString());
+            weatherStation.SetTemperature(30);
+            Console.WriteLine(car.ToString());
+
+
         }
     }
 }
