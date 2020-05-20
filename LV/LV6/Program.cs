@@ -62,11 +62,24 @@ namespace LV6
             //Console.WriteLine(bankAccount1.OwnerName + ", " + bankAccount1.OwnerAddress + ", " + bankAccount1.Balance);
 
             //5. zadatak
-            AbstractLogger logger = new ConsoleLogger(MessageType.ALL);
-            FileLogger fileLogger = new FileLogger(MessageType.ERROR | MessageType.WARNING, @"D:\LV_DOOP\LV\LV6\logFile.txt");
-            logger.SetNextLogger(fileLogger);
-            logger.Log("This is error and warning alert. ", MessageType.ERROR | MessageType.WARNING);
-            fileLogger.Log("This is information alert.", MessageType.INFO);
+            //AbstractLogger logger = new ConsoleLogger(MessageType.ALL);
+            //FileLogger fileLogger = new FileLogger(MessageType.ERROR | MessageType.WARNING, @"D:\LV_DOOP\LV\LV6\logFile.txt");
+            //logger.SetNextLogger(fileLogger);
+            //logger.Log("This is error and warning alert. ", MessageType.ERROR | MessageType.WARNING);
+            //fileLogger.Log("This is information alert.", MessageType.INFO);
+
+            //6. zadatak
+            string stringToCheck= "This is 1. string check.";
+            string stringToCheck2 = "This string has no digits.";
+            StringChecker stringDigitChecker = new StringDigitChecker();
+            StringChecker stringLengthChecker = new StringLengthChecker();
+            StringChecker stringLowerCaseChecker = new StringLowerCaseChecker();
+            StringChecker stringUpperCaseChecker = new StringUpperCaseChecker();
+            stringDigitChecker.SetNext(new StringLengthChecker());
+            stringLengthChecker.SetNext(new StringLowerCaseChecker());
+            stringLowerCaseChecker.SetNext(new StringUpperCaseChecker());
+            Console.WriteLine(stringDigitChecker.Check(stringToCheck));
+            Console.WriteLine(stringDigitChecker.Check(stringToCheck2));
         }
     }
 }
