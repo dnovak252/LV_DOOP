@@ -21,19 +21,34 @@ namespace LV6
             //    iterator.Next();
             //}
 
-            Product product1 = new Product("Milk", 1.8);
-            Product product2 = new Product("Bread", 1);
-            Product product3 = new Product("Eggs", 2.2);
-            Box box = new Box();
-            box.AddProduct(product1);
-            box.AddProduct(product2);
-            box.AddProduct(product3);
-            IAbstractIteratorTask2 iteratorTask2 = box.GetIterator();
-            for (int i = 0; i <box.Count; i++)
-            {
-                Console.WriteLine(iteratorTask2.Current.ToString());
-                iteratorTask2.Next();
-            }
+            //2. zadatak
+            //Product product1 = new Product("Milk", 1.8);
+            //Product product2 = new Product("Bread", 1);
+            //Product product3 = new Product("Eggs", 2.2);
+            //Box box = new Box();
+            //box.AddProduct(product1);
+            //box.AddProduct(product2);
+            //box.AddProduct(product3);
+            //IAbstractIteratorTask2 iteratorTask2 = box.GetIterator();
+            //for (int i = 0; i <box.Count; i++)
+            //{
+            //    Console.WriteLine(iteratorTask2.Current.ToString());
+            //    iteratorTask2.Next();
+            //}
+
+            //3.zadatak
+            var dateTime = new DateTime(2020, 12, 21, 16, 0, 0);
+            var dateTime2 = new DateTime(2020, 12, 21, 12, 0, 0);
+            ToDoItem item1 = new ToDoItem("Item no.1", "Clean room", dateTime);
+            Console.WriteLine(item1.ToString());
+            CareTaker careTaker = new CareTaker();
+            careTaker.StackPush(item1.StoreState());
+            item1.Rename("Item no.1 - Update");
+            item1.ChangeTask("Wash the dishes");
+            item1.ChangeTimeDue(dateTime2);
+            Console.WriteLine(item1.ToString());
+            item1.RestoreState(careTaker.StackPop());
+            Console.WriteLine(item1.ToString());
         }
     }
 }
