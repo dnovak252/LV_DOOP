@@ -37,18 +37,29 @@ namespace LV6
             //}
 
             //3.zadatak
-            var dateTime = new DateTime(2020, 12, 21, 16, 0, 0);
-            var dateTime2 = new DateTime(2020, 12, 21, 12, 0, 0);
-            ToDoItem item1 = new ToDoItem("Item no.1", "Clean room", dateTime);
-            Console.WriteLine(item1.ToString());
-            CareTaker careTaker = new CareTaker();
-            careTaker.StackPush(item1.StoreState());
-            item1.Rename("Item no.1 - Update");
-            item1.ChangeTask("Wash the dishes");
-            item1.ChangeTimeDue(dateTime2);
-            Console.WriteLine(item1.ToString());
-            item1.RestoreState(careTaker.StackPop());
-            Console.WriteLine(item1.ToString());
+            //var dateTime = new DateTime(2020, 12, 21, 16, 0, 0);
+            //var dateTime2 = new DateTime(2020, 12, 21, 12, 0, 0);
+            //ToDoItem item1 = new ToDoItem("Item no.1", "Clean room", dateTime);
+            //Console.WriteLine(item1.ToString());
+            //CareTaker careTaker = new CareTaker();
+            //careTaker.StackPush(item1.StoreState());
+            //item1.Rename("Item no.1 - Update");
+            //item1.ChangeTask("Wash the dishes");
+            //item1.ChangeTimeDue(dateTime2);
+            //Console.WriteLine(item1.ToString());
+            //item1.RestoreState(careTaker.StackPop());
+            //Console.WriteLine(item1.ToString());
+
+            //4.zadatak
+            BankAccount bankAccount1 = new BankAccount("Marko Maric", "Matije Gupca 51", 5000);
+            Console.WriteLine(bankAccount1.OwnerName + ", " + bankAccount1.OwnerAddress + ", " + bankAccount1.Balance+"\n");
+            MementoBankAccount memento = bankAccount1.StoreState();
+            bankAccount1.ChangeOwnerAddress("J.J. Strossmayera 22");
+            Console.WriteLine("Update!");
+            Console.WriteLine(bankAccount1.OwnerName + ", " + bankAccount1.OwnerAddress + ", " + bankAccount1.Balance+"\n");
+            bankAccount1.RestoreState(memento);
+            Console.WriteLine("Previous data restored!");
+            Console.WriteLine(bankAccount1.OwnerName + ", " + bankAccount1.OwnerAddress + ", " + bankAccount1.Balance);
         }
     }
 }
