@@ -82,21 +82,34 @@ namespace LV6
             //Console.WriteLine(stringDigitChecker.Check(stringToCheck2));
 
             //7. zadatak
-            StringChecker stringDigitChecker = new StringDigitChecker();
-            StringChecker stringLengthChecker = new StringLengthChecker();
-            StringChecker stringLowerCaseChecker = new StringLowerCaseChecker();
-            StringChecker stringUpperCaseChecker = new StringUpperCaseChecker();
-            string passwordCheck = "123Password321";
-            PasswordValidator validator = new PasswordValidator(stringDigitChecker);
-            validator.AddLink(stringLengthChecker);
-            validator.AddLink(stringLowerCaseChecker);
-            validator.AddLink(stringUpperCaseChecker);
-            Console.WriteLine(validator.CheckPassword(passwordCheck));
-            string passwordCheck2 = "falsepassword";
-            validator.AddLink(stringLengthChecker);
-            validator.AddLink(stringLowerCaseChecker);
-            validator.AddLink(stringUpperCaseChecker);
-            Console.WriteLine(validator.CheckPassword(passwordCheck2));
+            //StringChecker stringDigitChecker = new StringDigitChecker();
+            //StringChecker stringLengthChecker = new StringLengthChecker();
+            //StringChecker stringLowerCaseChecker = new StringLowerCaseChecker();
+            //StringChecker stringUpperCaseChecker = new StringUpperCaseChecker();
+            //string passwordCheck = "123Password321";
+            //PasswordValidator validator = new PasswordValidator(stringDigitChecker);
+            //validator.AddLink(stringLengthChecker);
+            //validator.AddLink(stringLowerCaseChecker);
+            //validator.AddLink(stringUpperCaseChecker);
+            //Console.WriteLine(validator.CheckPassword(passwordCheck));
+            //string passwordCheck2 = "falsepassword";
+            //validator.AddLink(stringLengthChecker);
+            //validator.AddLink(stringLowerCaseChecker);
+            //validator.AddLink(stringUpperCaseChecker);
+            //Console.WriteLine(validator.CheckPassword(passwordCheck2));
+
+            //8. zadatak
+            WeatherStation weatherStation = new WeatherStation(20);
+            HomeThermostat homeThermostat = new HomeThermostat();
+            HomeThermostat workplaceThermostat = new HomeThermostat();
+            homeThermostat.Update(20);
+            weatherStation.AddObserver(homeThermostat);
+            weatherStation.AddObserver(workplaceThermostat);
+            workplaceThermostat.Update(14);
+            weatherStation.SetTemperature(27);
+            weatherStation.RemoveObserver(homeThermostat);
+            workplaceThermostat.Update(14);
+            workplaceThermostat.Update(32);
         }
     }
 }
