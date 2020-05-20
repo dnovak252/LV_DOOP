@@ -69,17 +69,34 @@ namespace LV6
             //fileLogger.Log("This is information alert.", MessageType.INFO);
 
             //6. zadatak
-            string stringToCheck= "This is 1. string check.";
-            string stringToCheck2 = "This string has no digits.";
+            //string stringToCheck= "This is 1. string check.";
+            //string stringToCheck2 = "This string has no digits.";
+            //StringChecker stringDigitChecker = new StringDigitChecker();
+            //StringChecker stringLengthChecker = new StringLengthChecker();
+            //StringChecker stringLowerCaseChecker = new StringLowerCaseChecker();
+            //StringChecker stringUpperCaseChecker = new StringUpperCaseChecker();
+            //stringDigitChecker.SetNext(new StringLengthChecker());
+            //stringLengthChecker.SetNext(new StringLowerCaseChecker());
+            //stringLowerCaseChecker.SetNext(new StringUpperCaseChecker());
+            //Console.WriteLine(stringDigitChecker.Check(stringToCheck));
+            //Console.WriteLine(stringDigitChecker.Check(stringToCheck2));
+
+            //7. zadatak
             StringChecker stringDigitChecker = new StringDigitChecker();
             StringChecker stringLengthChecker = new StringLengthChecker();
             StringChecker stringLowerCaseChecker = new StringLowerCaseChecker();
             StringChecker stringUpperCaseChecker = new StringUpperCaseChecker();
-            stringDigitChecker.SetNext(new StringLengthChecker());
-            stringLengthChecker.SetNext(new StringLowerCaseChecker());
-            stringLowerCaseChecker.SetNext(new StringUpperCaseChecker());
-            Console.WriteLine(stringDigitChecker.Check(stringToCheck));
-            Console.WriteLine(stringDigitChecker.Check(stringToCheck2));
+            string passwordCheck = "123Password321";
+            PasswordValidator validator = new PasswordValidator(stringDigitChecker);
+            validator.AddLink(stringLengthChecker);
+            validator.AddLink(stringLowerCaseChecker);
+            validator.AddLink(stringUpperCaseChecker);
+            Console.WriteLine(validator.CheckPassword(passwordCheck));
+            string passwordCheck2 = "falsepassword";
+            validator.AddLink(stringLengthChecker);
+            validator.AddLink(stringLowerCaseChecker);
+            validator.AddLink(stringUpperCaseChecker);
+            Console.WriteLine(validator.CheckPassword(passwordCheck2));
         }
     }
 }
