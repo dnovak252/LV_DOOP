@@ -1,21 +1,29 @@
 ﻿using System;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace CheckIfPalindrome
 {
     public class PalindromeCheck
     {
-        public string IsPalindrome(string s)
+        public bool IsPalindrome(string s)
         {
+            int a = s.Length;
+            if (a<1)
+                throw new ArgumentException();
             s = s.Replace(" ", String.Empty);
-            StringBuilder sb = new StringBuilder();
-            string result = Regex.Replace(s, @"[^a-zA-Z]+", "");
-            string LowerCaseString = result.ToLower();
-            char[] array = LowerCaseString.ToCharArray();
+            string noSpecialCaractersString = Regex.Replace(s, @"[^a-zA-Z]+", "");
+            string  finalString= noSpecialCaractersString.ToLower();
+            char[] array = finalString.ToCharArray();
             Array.Reverse(array);
             string backwards = new string(array);
-            return backwards;
+            if (finalString == backwards)
+            {
+               return true;
+            }
+            else
+            {
+               return false;
+            }
         }
     }
 }

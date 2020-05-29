@@ -9,7 +9,7 @@ namespace PalindromeChecker
         static void Main(string[] args)
         {
             PalindromeCheck palindrome = new PalindromeCheck();
-            string s = "*Ana voli Milovana8";
+            string s = "Ana voli Milovana";
             Console.Write(palindrome.IsPalindrome(s));
         }
     }
