@@ -6,51 +6,74 @@ namespace CheckIfPalindrome.Test
     [TestFixture]
     public class PalindromeCheckTests
     {
-        PalindromeCheck checkPalindrome = new PalindromeCheck();
-        [Test]
-        public void CheckIfPalindromeEmpty_WhenEmpty_ReturnsException()
+        PalindromeCheck palindromeCheck = new PalindromeCheck();
+
+        [TestCase("")]
+        public void CheckIfPalindromeEmpty_WhenEmpty_ReturnsException(string input)
         {
-            string input = "";
-            Assert.Throws<ArgumentException>(() => checkPalindrome.IsPalindrome(input));
+            Assert.Throws<ArgumentException>(() => palindromeCheck.IsPalindrome(input));
         }
-        [Test]
-        public void CheckIfPalindrome_WhenPalindrome_ReturnsTrue()
+
+        [TestCase("anavolimilovana")]
+        [TestCase("tacocat")]
+        public void CheckIfPalindrome_WhenPalindrome_ReturnsTrue(string input)
         {
             bool expected = true;
-            string input = "anavolimilovana";
-            bool actual = checkPalindrome.IsPalindrome(input);
+            bool actual = palindromeCheck.IsPalindrome(input);
             Assert.AreEqual(expected, actual);
         }
-        [Test]
-        public void CheckIfPalindrome_WhenNotPalindrome_ReturnsFalse()
+
+        [TestCase ("ovonijepalindrom")]
+        [TestCase("thisisnotpalindrome")]
+        public void CheckIfPalindrome_WhenNotPalindrome_ReturnsFalse(string input)
         {
             bool expected = false;
-            string input = "ovo nije palindrom";
-            bool actual = checkPalindrome.IsPalindrome(input);
+            bool actual = palindromeCheck.IsPalindrome(input);
             Assert.AreEqual(expected, actual);
         }
-        [Test]
-        public void CheckIfPalindrome_WhenPalindromeHasUppercases_ReturnsTrue()
+
+        [TestCase("AnaVoliMilovana")]
+        [TestCase("TacoCat")]
+        public void CheckIfPalindrome_WhenPalindromeHasUppercases_ReturnsTrue(string input)
         {
             bool expected = true;
-            string input = "Ana voli Milovana";
-            bool actual = checkPalindrome.IsPalindrome(input);
+            bool actual = palindromeCheck.IsPalindrome(input);
             Assert.AreEqual(expected, actual);
         }
-        [Test]
-        public void CheckIfPalindrome_WhenPalindromeHasNumbers_ReturnsTrue()
+
+        [TestCase("AnaVoliMilovana123")]
+        [TestCase("123TacoCat")]
+        public void CheckIfPalindrome_WhenPalindromeHasNumbers_ReturnsTrue(string input)
         {
             bool expected = true;
-            string input = "Ana voli Milovana123";
-            bool actual = checkPalindrome.IsPalindrome(input);
+            bool actual = palindromeCheck.IsPalindrome(input);
             Assert.AreEqual(expected, actual);
         }
-        [Test]
-        public void CheckIfPalindrome_WhenPalindromeHasSpecialCaracters_ReturnsTrue()
+
+        [TestCase("*anavolimilovana!")]
+        [TestCase("!tacocat*")]
+        public void CheckIfPalindrome_WhenPalindromeHasSpecialCaracters_ReturnsTrue(string input)
         {
             bool expected = true;
-            string input = "!Ana voli Milovana*";
-            bool actual = checkPalindrome.IsPalindrome(input);
+            bool actual = palindromeCheck.IsPalindrome(input);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase("ana voli milovana")]
+        [TestCase("taco cat taco cat")]
+        public void CheckIfPalindrome_WhenPalindromeHasSpaces_ReturnsTrue(string input)
+        {
+            bool expected = true;
+            bool actual = palindromeCheck.IsPalindrome(input);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase("!Ana Voli 1Milovana")]
+        [TestCase("!taco 123cat?")]
+        public void CheckIfPalindrome_WhenPalindromeHasAll_ReturnsTrue(string input)
+        {
+            bool expected = true;
+            bool actual = palindromeCheck.IsPalindrome(input);
             Assert.AreEqual(expected, actual);
         }
     }

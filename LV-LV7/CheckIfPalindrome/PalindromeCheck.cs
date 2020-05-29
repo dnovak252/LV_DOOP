@@ -5,18 +5,22 @@ namespace CheckIfPalindrome
 {
     public class PalindromeCheck
     {
-        public bool IsPalindrome(string s)
+        private const int minimumStringToCheckLength = 1;
+
+        public bool IsPalindrome(string stringToCheck)
         {
-            int a = s.Length;
-            if (a<1)
+            int stringLength = stringToCheck.Length;
+            if (stringLength < minimumStringToCheckLength)
+            {
                 throw new ArgumentException();
-            s = s.Replace(" ", String.Empty);
-            string noSpecialCaractersString = Regex.Replace(s, @"[^a-zA-Z]+", "");
-            string  finalString= noSpecialCaractersString.ToLower();
-            char[] array = finalString.ToCharArray();
-            Array.Reverse(array);
-            string backwards = new string(array);
-            if (finalString == backwards)
+            }
+            stringToCheck = stringToCheck.Replace(" ", String.Empty);
+            string noSpecialCaractersString = Regex.Replace(stringToCheck, @"[^a-zA-Z]+", "");
+            string finalStringToCheck = noSpecialCaractersString.ToLower();
+            char[] tempArray = finalStringToCheck.ToCharArray();
+            Array.Reverse(tempArray);
+            string backwardsStringToCheck = new string(tempArray);
+            if (finalStringToCheck == backwardsStringToCheck)
             {
                return true;
             }

@@ -9,8 +9,10 @@ namespace PalindromeChecker
         static void Main(string[] args)
         {
             PalindromeCheck palindrome = new PalindromeCheck();
-            string s = "Ana voli Milovana";
-            Console.Write(palindrome.IsPalindrome(s));
+            string stringToCheck = "!Ana voli Milovana123";
+            Console.WriteLine(stringToCheck+" je palindrom: "+palindrome.IsPalindrome(stringToCheck));
+            string stringToCheck2 = "ovo nije palindrom";
+            Console.WriteLine(stringToCheck2 + " je palindrom: "+palindrome.IsPalindrome(stringToCheck2));
         }
     }
 }
